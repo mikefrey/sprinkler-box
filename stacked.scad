@@ -20,7 +20,6 @@ module Sprinkler($fn=100) {
     //RaspiStandoffs(raspiPos);
     *RaspiCutout(raspiPos);
     *Relay(relayPos);
-    BigStandoff(2, 6, 10, 40);
 }
 
 module Box() {
@@ -133,6 +132,9 @@ module RelayStandoffs(center=[0,0,0]) {
     pegDepth = 3;
     standDiameter = 5;
     standDepth = 3;
+    
+    
+    translate([-64, -18, -11.5]) rotate([0, 0, 180]) BigStandoff(2, 6, 10, 27);
     
     translate(center) union() {
         translate([-width/2+2.3, depth/2-2.3, -11]) Peg(2, 5, 7, 4);
